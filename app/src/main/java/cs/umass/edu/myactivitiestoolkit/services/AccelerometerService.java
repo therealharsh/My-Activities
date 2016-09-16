@@ -271,8 +271,8 @@ public class AccelerometerService extends SensorService implements
         "MOBILE",
         "",
         timestamp_in_milliseconds,
-        event.values)
-      );
+        event.values
+      ));
 
       //TODO: broadcast the accelerometer reading to the UI
       broadcastAccelerometerReading(timestamp_in_milliseconds, event.values);
@@ -300,10 +300,7 @@ public class AccelerometerService extends SensorService implements
    *
    * @param accelerometerReadings the x, y, and z accelerometer readings
    */
-  public void broadcastAccelerometerReading(
-    final long timestamp,
-    final float[] accelerometerReadings) {
-
+  public void broadcastAccelerometerReading(final long timestamp, final float[] accelerometerReadings) {
     Intent intent = new Intent();
     intent.putExtra(Constants.KEY.TIMESTAMP, timestamp);
     intent.putExtra(Constants.KEY.ACCELEROMETER_DATA, accelerometerReadings);
